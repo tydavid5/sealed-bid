@@ -1,0 +1,214 @@
+/* Sealed Bid styles. Avvyren inspired night sky hero, gold as the single accent. */
+/* Baheet motion in CSS: fast move then hold, hard cuts, rolling numbers that snap sharp. */
+body {
+  margin: 0;
+  background: #060d1d;
+}
+
+.sealed-root {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: #060d1d;
+  color: #e8edf5;
+  min-height: 100vh;
+  line-height: 1.55;
+}
+
+.sealed-hero {
+  background:
+    radial-gradient(ellipse 90% 55% at 50% 0%, rgba(201, 162, 39, 0.16), transparent 62%),
+    radial-gradient(ellipse 70% 40% at 18% 8%, rgba(64, 110, 190, 0.28), transparent 60%),
+    radial-gradient(ellipse 60% 35% at 82% 12%, rgba(36, 57, 94, 0.55), transparent 62%),
+    linear-gradient(180deg, #081426 0%, #060d1d 78%, #060d1d 100%);
+}
+
+.sealed-horizon {
+  height: 2px;
+  margin: 2rem 0 0;
+  background: linear-gradient(90deg, transparent, #c9a227 22%, #e3c766 50%, #c9a227 78%, transparent);
+  box-shadow: 0 0 18px 2px rgba(201, 162, 39, 0.45), 0 0 42px 6px rgba(201, 162, 39, 0.16);
+  animation: horizonGlow 3.2s ease-in-out infinite alternate;
+}
+
+@keyframes horizonGlow {
+  from { opacity: 0.75; }
+  to { opacity: 1; }
+}
+
+.sealed-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid #c9a227;
+  border-radius: 999px;
+  color: #e3c766;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.sealed-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #c9a227;
+  box-shadow: 0 0 10px 2px rgba(201, 162, 39, 0.7);
+}
+
+.sealed-hero-number {
+  font-size: clamp(3rem, 9vw, 5.5rem);
+  line-height: 0.95;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #e3c766;
+  margin: 0.5rem 0 0;
+}
+
+.sealed-tab {
+  flex: 1;
+  min-width: 140px;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #24395e;
+  background: #0a1a33;
+  color: #9fb0c9;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: left;
+}
+
+.sealed-tab-active {
+  border-color: #c9a227;
+  background: #12294d;
+  color: #e3c766;
+  box-shadow: 0 0 0 1px #c9a227, 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.sealed-card {
+  background: #10233f;
+  border: 1px solid #24395e;
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.sealed-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid #24395e;
+  background: #12294d;
+  color: #e8edf5;
+  font-size: 1rem;
+}
+
+.sealed-input:focus {
+  outline: 2px solid #c9a227;
+  outline-offset: 1px;
+}
+
+.sealed-button {
+  padding: 0.8rem 1.4rem;
+  border-radius: 10px;
+  border: none;
+  background: #c9a227;
+  color: #0a1a33;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.sealed-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.sealed-button-ghost {
+  background: transparent;
+  color: #e3c766;
+  border: 1px solid #c9a227;
+}
+
+.sealed-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  animation: pillUp 0.28s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+}
+
+@keyframes pillUp {
+  from { transform: translateY(16px) scale(0.96); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.sealed-pill-gold {
+  background: #c9a227;
+  color: #0a1a33;
+}
+
+.sealed-pill-blocked {
+  background: #3d1520;
+  color: #ffd7d7;
+  border: 1px solid #a33;
+}
+
+.sealed-push-in {
+  animation: pushIn 0.32s cubic-bezier(0.2, 0.9, 0.3, 1.15) both;
+}
+
+@keyframes pushIn {
+  from { transform: translateY(14px) scale(0.985); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.sealed-pop {
+  animation: popIn 0.3s cubic-bezier(0.2, 0.9, 0.3, 1.25) both;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.96); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.sealed-rolling {
+  filter: blur(2px);
+  opacity: 0.75;
+}
+
+.sealed-word {
+  display: inline-block;
+  animation: wordIn 0.3s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+}
+
+@keyframes wordIn {
+  from { transform: translateY(8px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.sealed-stat {
+  flex: 1;
+  min-width: 150px;
+  padding: 1rem 1.1rem;
+  border: 1px solid #24395e;
+  border-radius: 14px;
+  background: rgba(16, 35, 63, 0.85);
+}
+
+.sealed-stat-value {
+  font-size: 2rem;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #e3c766;
+}
+
+@media (max-width: 640px) {
+  .sealed-card { padding: 1.1rem; }
+  .sealed-stat-value { font-size: 1.6rem; }
+}

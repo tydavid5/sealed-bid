@@ -1,0 +1,34 @@
+{
+  "dependencies": {
+    "@noble/hashes": "^1.8.0",
+    "@qorechain/pqc": "^0.2.3",
+    "@qorechain/qoreseal": "^0.1.0",
+    "@qorechain/qoresign": "^0.1.0",
+    "@qorechain/sdk": "^0.14.0",
+    "@scure/base": "^2.4.0",
+    "@scure/bip39": "^2.4.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "description": "Sealed Bid: a sealed bid auction on QoreChain testnet where bids are encrypted with ML-KEM-1024 and revealed only after close.",
+  "devDependencies": {
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.0",
+    "vitest": "^2.1.0"
+  },
+  "license": "MIT",
+  "name": "sealed-bid",
+  "private": true,
+  "scripts": {
+    "build": "tsc -p tsconfig.json && vite build",
+    "dev": "vite",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "type": "module",
+  "version": "1.0.0"
+}
